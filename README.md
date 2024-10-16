@@ -3,7 +3,7 @@
 Need to ping a bunch of ips/servers (in cron) and view them nicely via a web interface?  Here is a great way to do just that.
 I originally needed this to monitor a several WIFI long-range outdoor antennas which would randomly fail, and I never knew which ones were at fault.
 
-![Sample](checkup.jpg)
+![Sample](checkup.png)
 
 The goal and implementation is simple:
 - Keep the dependencies simple, independent, and something that could run easily on a Raspberry PI (or an old cracked-screen, rooted, Samsung S8+ android cell phone in my basement).
