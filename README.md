@@ -19,8 +19,8 @@ For the server ping logging:
 1. copy the ```cron``` directory someplace nice (I chose /opt/checkup/cron)
 1. edit the ```antennas.ini``` to have whatever IPs you'd like to ping (see my network diagram below as an example)
 1. edit the variables in ```cron/checkup.sh``` to point to wherever you decided to install this.
-1. run ```crontab -e``` and add ```* * * * */5 /opt/checkup/cron/checkup.sh``` to run it every 5 minutes.
-1. I recommend installing ```vim``` to view the .gz realtime, at this point you've got nice data to start modelling...
+1. run ```crontab -e``` and add ```*/5 * * * * /opt/checkup/cron/checkup.sh``` to run it every 5 minutes (adjust to less or more to your liking).
+1. I recommend installing ```vim``` to view the .gz realtime, at this point you've got nice data flowing to start modelling, diagnosing, and maintaining your network...
    Onto the web config portion!
 
 For the pretty web interface:
@@ -28,9 +28,13 @@ For the pretty web interface:
 1. install php8.2-fpm (earlier versions are probably fine)
 1. copy ```/www``` to your web root directory
 1. Hit your server from a browser and enjoy!
+1. HINT: You can scroll over the graph and even drag and select only the time you want to ZOOM in and focus on - very effective.
 
 ## TODO
-- [ ] Reintroduce the PHP that I lost which generates the dynamic graph from log files...
+- [x] _Reintroduce the PHP that I lost which generates the dynamic graph from log files..._
+- [ ] Alerting system, maybe via text/email/chat protocols when something is -0
+- [ ] Fix code and/or canvas.js legend to show the WHOLE date and time, NOTE just the day when mouseover.
+- [ ] Log rolling (although it's fun to let this log get big and watch it still draw out the network diagram.
 
 ## Network Diagram
 My example network to monitor (with a fairly complex topology):

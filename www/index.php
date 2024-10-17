@@ -103,7 +103,8 @@ foreach($totals as $k=>$v) {
 <table width=600px>
 <?php
 $lastrun = explode("\n", shell_exec("zcat ".DATAFILE." | tail -".(count($totals)-1)));
-foreach($lastrun as $v) {
+foreach($lastrun as $v) { 
+    if (!$v) continue;
     $data = explode(",", $v);	
     echo "<tr>";
     foreach ($data as $v) echo "<td align=right>$v</td>";
