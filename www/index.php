@@ -101,6 +101,7 @@ foreach($totals as $k=>$v) {
 </table></div>
 <div style="float:right"><pre>Recent: (here is the latest run)<hr>
 <table width=600px>
+<tr><th>Date (m-d-y)</th><th>Time (Hms)</th><th>IP</th><th>Sent</th><th>Recvd</th><th>Pkt Loss</th><th>min ms</th><th>avg ms</th><th>max ms</th></tr>
 <?php
 $lastrun = explode("\n", shell_exec("zcat ".DATAFILE." | tail -".(count($totals)-1)));
 foreach($lastrun as $v) { 
